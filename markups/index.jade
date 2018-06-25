@@ -1,0 +1,632 @@
+include _mixins
+//header
+doctype html
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+html
+    head
+        meta(http-equiv = 'Content-Type', content = 'text/html; charset=utf-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1" )
+        link(rel="stylesheet" href='fonts/stylesheet.css')
+
+        //build:css css/vendor.css
+        link(rel="stylesheet", href="bower/normalize-css/normalize.css")
+        link(rel="stylesheet" type='text/css' href="bower/qtip2/jquery.qtip.css")
+
+        link(href="css/jquery.formstyler.css" rel="stylesheet")
+        link(href="css/jquery.formstyler.theme.css" rel="stylesheet")
+        link(href="css/bootstrap.css" rel="stylesheet")
+        //endbuild
+        //build:css css/main.css
+        link(rel="stylesheet" type='text/css' href="/css/main.css")
+        //endbuild
+        //build:js js/modernizr.js
+        script(src="bower/modernizr/modernizr.js")
+        //endbuild
+    body
+        .wrapper
+                .header.navbar.navbar-expand-lg.navbar-light.bg-light
+                    .menu_mobile_block
+                        button(class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+                            span( class="navbar-toggler-icon")
+                            p    Меню
+
+                        a(href="/"): img('src=images/logo_footer.png' class="logo_top_img" alt="logo_mobile")
+                        .block_aut
+                            a(href=""): img('src=images/search.png' class="search_img")
+                            a(href=""): img('src=images/basket.png' class="basket_img")
+
+                    .navbar-collapse.collapse(id="navbarSupportedContent")
+                        .header_mobile
+                            .header_top.container-fluid
+
+                                .block_city.col-lg-3.col-md-12
+                                    form.content-bar
+                                        span.content-bar__text
+                                            | Ваш город доставки:
+                                        select.content-bar__select(size="1")
+                                            option.content-bar__option Кострома
+                                            option.content-bar__option Ярославль
+                                            option.content-bar__option Нижний Новгород
+                                        .block_bar_city
+                                            p Информация по доставке будет отображаться для города Кострома. Верно?
+                                            input( type="submit" value="Да, верно" class="form__submit submit_1 ")
+                                            input( type="submit" value="Выбрать другой город" class="form__submit submit_2")
+
+
+                            .header_down.container-fluid
+
+                                .block_logo.col-lg-3.col-md-12
+                                    a: img('src=images/logo.png' alt="logo")
+                                .top_menu.col-lg-6.col-md-12
+                                    +nav('box__nav-navigation', ['Для женщин', 'Для мужчин', 'Для детей', 'Сумки и аксуссуары', 'Бренды'], 1)
+                                .block_search.col-lg-1.col-md-12
+                                    a: img('src=images/search.png' class="search_img")
+
+                                .block_aut.col-lg-2.col-md-12
+                                    a(class="a_exit" href='#') Вход
+                                    a(class="" href='#') Корзина
+                                    a: img('src=images/basket.png' class="basket_img")
+                                .header_douwn_block_mobile
+                                    .block_phone.col-lg-9.justify-content-end.col-md-12
+                                        .block_phone_menu
+                                            +nav('box__nav-navigation', ['Доставка и оплата ', 'Магазин', 'Контакты'], 2)
+                                        .block_phone_items
+                                            a.phone_link(href="tel:8 800 155 29 48")  8 800 155 29 48
+                                            p   Ежедневно с 10:00 до 19:00
+
+                .header.header_large
+
+                    .header_top.container-fluid
+
+                        .block_city.col-lg-3.col-md-12
+                            form.content-bar
+                                span.content-bar__text
+                                    | Ваш город доставки:
+                                select.content-bar__select(size="1")
+                                    option.content-bar__option Кострома
+                                    option.content-bar__option Ярославль
+                                    option.content-bar__option Нижний Новгород
+                                .block_bar_city
+                                    p Информация по доставке будет отображаться для города Кострома. Верно?
+                                    input( type="submit" value="Да, верно" class="form__submit submit_1 ")
+                                    input( type="submit" value="Выбрать другой город" class="form__submit submit_2")
+
+                        .block_phone.col-lg-9.justify-content-end.col-md-12
+                            .block_phone_menu
+                                +nav('box__nav-navigation', ['Доставка и оплата ', 'Магазин', 'Контакты'], 2)
+                            .block_phone_items
+                                a.phone_link(href="tel:8 800 155 29 48")  8 800 155 29 48
+                                p   Ежедневно с 10:00 до 19:00
+                    .header_down.container-fluid
+
+                        .block_logo.col-lg-3.col-md-12
+                            a: img('src=images/logo.png' alt="logo")
+                        .top_menu.col-lg-6.col-md-12
+                            +nav('box__nav-navigation', ['Для женщин', 'Для мужчин', 'Для детей', 'Сумки и аксуссуары', 'Бренды'], 1)
+                        .block_search.col-lg-1.col-md-12
+                            a: img('src=images/search.png' class="search_img")
+
+                        .block_aut.col-lg-2.col-md-12
+                            a(class="a_exit" href='#') Вход
+                            a(class="" href='#') Корзина
+                            a: img('src=images/basket.png' class="basket_img")
+
+                 //slider
+
+                .section_slider
+                       .block_slider
+                            div(class="single-item slick-slider")
+                                            .slick-slide
+
+                                                    .block_slider_item
+                                                        .block_image
+                                                            .block_img_ground
+                                                                .slide_img(style="background-image:url(../images/slider_img.jpg)")
+                                                            .block_text
+                                                                   .img_block
+                                                                       img(src="/images/cat_img.png")
+
+                                                                   .item_text
+                                                                         p  На баннере
+                                                                         a.link_page(href="" id="") Босоножки Pazolini
+
+                                                        .block_descript
+                                                              h2 Самая летняя
+                                                                 br
+                                                                 |коллекция обуви
+                                                              p Создай жаркое настроение
+                                                              a.link_page.button(href="" id="") Смотреть в каталоге
+                                            .slick-slide
+
+                                                    .block_slider_item
+                                                        .block_image
+                                                            .block_img_ground
+                                                                .slide_img(style="background-image:url(../images/slider_img_2.jpg)")
+                                                            .block_text
+                                                                   .img_block
+                                                                        img(src="/images/cat_img.png")
+                                                                   .item_text
+                                                                        p  На баннере
+                                                                        a.link_page(href="" id="") Босоножки Pazolini
+                                                            .block_text_2
+                                                                p 50%
+                                                        .block_descript
+                                                               h2 Скидки
+                                                                   br
+                                                                   |на летние ботинки
+                                                               p  Ботинки от 789 руб.
+                                                               a.link_page.button(href="" id="") Смотреть в каталоге
+                .section_brand
+                    img(src="/images/brand_img_1.png")
+                    img(src="/images/brand_img_2.png")
+                    img(src="/images/brand_img_3.png")
+                    img(src="/images/brand_img_4.png")
+                    img(src="/images/brand_img_5.png")
+                    a.link_page(href="" id="") Посмотреть
+                                                     br
+                                                     |еще 62 бренда
+                .section_main
+                        .section_catalog
+                                h2 Горящие предложения
+
+                                div(id="tabs")
+                                    ul.block_check_proposals(class="nav nav-tabs" id="myTab" role="tablist")
+                                        li
+                                            a.link.link_slider.active( href="#tabs-1" data-toggle="tab") Для женщин
+                                        li
+                                            a.link.link_slider( href="#tabs-2" data-toggle="tab") Для мужцин
+                                        li
+                                            a.link.link_slider( href="#tabs-3" data-toggle="tab") Для детей
+
+
+                                    .tab-content
+                                                .block_slide_prop.block_slider.active(id="tabs-1")
+                                                    .slide_prop.slick-slider.slider.slide_prop_1
+                                                        .slick-slide.slide_item
+                                                            img(src="/images/prop_img_1.png")
+                                                            .text_block
+                                                                .discount
+                                                                     p 10%
+                                                                .price_block
+                                                                    p Avenir босоножки
+                                                                    .coast_block
+                                                                          .cost_item.coast_item_1 1 690 руб.
+                                                                          .coast_item.coast_item_2     1 521 руб.
+                                                        .slick-slide.slide_item
+                                                             img(src="/images/prop_img_2.png")
+                                                             .text_block
+                                                                  .discount
+                                                                       p 10%
+                                                                  .price_block
+                                                                           p Avenir
+                                                                                 span босоножки
+                                                                           .coast_block
+                                                                              .cost_item.coast_item_1 1 690 руб.
+                                                                              .coast_item.coast_item_2     1 521 руб.
+
+                                                        .slick-slide.slide_item
+                                                            img(src="/images/prop_img_3.png")
+                                                            .text_block
+                                                                .discount
+                                                                     p 10%
+                                                                .price_block
+                                                                    p Avenir босоножки
+                                                                    .coast_block
+                                                                          .cost_item.coast_item_1 1 690 руб.
+                                                                          .coast_item.coast_item_2     1 521 руб.
+                                                        .slick-slide.slide_item
+                                                             img(src="/images/prop_img_4.png")
+                                                             .text_block
+                                                                  .discount
+                                                                       p 10%
+                                                                  .price_block
+                                                                       p Avenir босоножки
+                                                                       .coast_block
+                                                                          .cost_item.coast_item_1 1 690 руб.
+                                                                          .coast_item.coast_item_2     1 521 руб.
+                                                        .slick-slide.slide_item
+                                                             img(src="/images/prop_img_5.png")
+                                                             .text_block
+                                                                  .discount
+                                                                       p 10%
+                                                                  .price_block
+                                                                           p Avenir босоножки
+                                                                           .coast_block
+                                                                                  .cost_item.coast_item_1 1 690 руб.
+                                                                                  .coast_item.coast_item_2     1 521 руб.
+                                                        .slick-slide.slide_item
+                                                                                            img(src="/images/prop_img_3.png")
+                                                                                            .text_block
+                                                                                                .discount
+                                                                                                     p 10%
+                                                                                                .price_block
+                                                                                                    p Avenir босоножки
+                                                                                                    .coast_block
+                                                                                                          .cost_item.coast_item_1 1 690 руб.
+                                                                                                          .coast_item.coast_item_2     1 521 руб.
+                                                .block_slide_prop.block_slider(id="tabs-2")
+                                                     .slide_prop.slick-slider.slider.slide_prop_2
+                                                                            .slick-slide.slide_item
+                                                                                img(src="/images/prop_img_1.png")
+                                                                                .text_block
+                                                                                    .discount
+                                                                                         p 10%
+                                                                                    .price_block
+                                                                                        p Avenir босоножки
+                                                                                        .coast_block
+                                                                                              .cost_item.coast_item_1 1 690 руб.
+                                                                                              .coast_item.coast_item_2     1 521 руб.
+                                                                            .slick-slide.slide_item
+                                                                                 img(src="/images/prop_img_2.png")
+                                                                                 .text_block
+                                                                                      .discount
+                                                                                           p 10%
+                                                                                      .price_block
+                                                                                               p Avenir
+                                                                                                     span босоножки
+                                                                                               .coast_block
+                                                                                                  .cost_item.coast_item_1 1 690 руб.
+                                                                                                  .coast_item.coast_item_2     1 521 руб.
+
+                                                                            .slick-slide.slide_item
+                                                                                img(src="/images/prop_img_3.png")
+                                                                                .text_block
+                                                                                    .discount
+                                                                                         p 10%
+                                                                                    .price_block
+                                                                                        p Avenir босоножки
+                                                                                        .coast_block
+                                                                                              .cost_item.coast_item_1 1 690 руб.
+                                                                                              .coast_item.coast_item_2     1 521 руб.
+                                                                            .slick-slide.slide_item
+                                                                                 img(src="/images/prop_img_4.png")
+                                                                                 .text_block
+                                                                                      .discount
+                                                                                           p 10%
+                                                                                      .price_block
+                                                                                           p Avenir босоножки
+                                                                                           .coast_block
+                                                                                              .cost_item.coast_item_1 1 690 руб.
+                                                                                              .coast_item.coast_item_2     1 521 руб.
+                                                                            .slick-slide.slide_item
+                                                                                 img(src="/images/prop_img_5.png")
+                                                                                 .text_block
+                                                                                      .discount
+                                                                                           p 10%
+                                                                                      .price_block
+                                                                                               p Avenir босоножки
+                                                                                               .coast_block
+                                                                                                      .cost_item.coast_item_1 1 690 руб.
+                                                                                                      .coast_item.coast_item_2     1 521 руб.
+                                                                            .slick-slide.slide_item
+                                                                                                                img(src="/images/prop_img_3.png")
+                                                                                                                .text_block
+                                                                                                                    .discount
+                                                                                                                         p 10%
+                                                                                                                    .price_block
+                                                                                                                        p Avenir босоножки
+                                                                                                                        .coast_block
+                                                                                                                              .cost_item.coast_item_1 1 690 руб.
+                                                                                                                              .coast_item.coast_item_2     1 521 руб.
+                                                .block_slide_prop.block_slider(id="tabs-3")
+                                                    .slide_prop.slick-slider.slider.slide_prop_3
+                                                        .slick-slide.slide_item
+                                                            img(src="/images/prop_img_1.png")
+                                                            .text_block
+                                                                .discount
+                                                                    p 10%
+                                                                .price_block
+                                                                    p Avenir босоножки
+                                                                    .coast_block
+                                                                        .cost_item.coast_item_1 1 690 руб.
+                                                                        .coast_item.coast_item_2     1 521 руб.
+                                                        .slick-slide.slide_item
+                                                            img(src="/images/prop_img_2.png")
+                                                            .text_block
+                                                                .discount
+                                                                    p 10%
+                                                                .price_block
+                                                                    p Avenir
+                                                                        span босоножки
+                                                                    .coast_block
+                                                                        .cost_item.coast_item_1 1 690 руб.
+                                                                        .coast_item.coast_item_2     1 521 руб.
+
+                                                        .slick-slide.slide_item
+                                                            img(src="/images/prop_img_3.png")
+                                                            .text_block
+                                                                .discount
+                                                                    p 10%
+                                                                .price_block
+                                                                    p Avenir босоножки
+                                                                    .coast_block
+                                                                        .cost_item.coast_item_1 1 690 руб.
+                                                                        .coast_item.coast_item_2     1 521 руб.
+                                                        .slick-slide.slide_item
+                                                            img(src="/images/prop_img_4.png")
+                                                            .text_block
+                                                                .discount
+                                                                    p 10%
+                                                                .price_block
+                                                                    p Avenir босоножки
+                                                                    .coast_block
+                                                                        .cost_item.coast_item_1 1 690 руб.
+                                                                        .coast_item.coast_item_2     1 521 руб.
+                                                        .slick-slide.slide_item
+                                                            img(src="/images/prop_img_5.png")
+                                                            .text_block
+                                                                .discount
+                                                                    p 10%
+                                                                .price_block
+                                                                    p Avenir босоножки
+                                                                    .coast_block
+                                                                        .cost_item.coast_item_1 1 690 руб.
+                                                                        .coast_item.coast_item_2     1 521 руб.
+                                                        .slick-slide.slide_item
+                                                            img(src="/images/prop_img_3.png")
+                                                            .text_block
+                                                                .discount
+                                                                    p 10%
+                                                                .price_block
+                                                                    p Avenir босоножки
+                                                                    .coast_block
+                                                                        .cost_item.coast_item_1 1 690 руб.
+                                                                        .coast_item.coast_item_2     1 521 руб.
+                        .block_promo.container_fluid
+                            .block_promo_text.col-lg-5
+                                h3 Всем по босоножкам
+                                p Дополнительно 20% на раздел босоножки и сандали промокод: ВСЕМЛЕТА2018
+                                .block_link
+                                             a.link(href="" ) Для женщин
+                                             a.link(href="" ) Для мужцин
+                                             a.link(href="" ) Для детей
+                            .block_promo_img.col-lg-7(style="background-image:url(../images/promo_img.jpg)")
+                                    //img(src="/images/promo_img.jpg" alt="promo")
+                        .block_wear
+                            h2 Что носить
+                            p Богатые оттенки в летней обуви
+                            .block_wear_top
+
+                                    .block_wear_cat.col-lg-3.col-sm-6.col-6
+                                        .item_cat
+                                              .block_img
+                                                     img(src="/images/wear_img_1.png")
+                                              .text_block
+                                                     .text_top Обувь для свиданий
+                                                     p.desc    Модная форма
+                                    .block_wear_cat.col-lg-3.col-sm-6.col-6
+                                        .item_goods
+                                               .new_item NEW
+                                               .block_img
+                                                   img(src="/images/wear_img_2.png")
+                                               .text_block
+                                                     .text_top Graciana
+                                                           span босоножки
+                                                     .price     4 491 руб.
+                                    .block_wear_cat.col-lg-3.col-sm-6.col-6
+                                        .item_cat
+                                              .block_img
+                                                    img(src="/images/wear_img_3.png")
+                                              .text_block
+                                                     .text_top Обувь для свиданий
+                                                     p.desc    Модная форма
+                                    .block_wear_cat.col-lg-3.col-sm-6.col-6
+                                        .item_goods
+                                               .new_item NEW
+                                               .block_img
+                                                   img(src="/images/wear_img_4.png")
+                                               .text_block
+                                                     .text_top Graciana
+                                                      span босоножки
+                                                     .price     4 491 руб.
+
+                        .block_wear_slider
+
+
+                                    .item_cat.col-lg-6.col-sm-12
+
+                                              .image_block
+                                                    img(src="/images/wear_b_img_1.png")
+                                              .text_block
+                                                     .text_top Скидки до 70% на последние модели сумок
+                                                     p.desc    Коллекция весна лето
+                                    .item_cat.col-lg-6.col-sm-12
+
+                                              .image_block
+                                                    img(src="/images/wear_b_img_2.png")
+                                              .text_block
+                                                     .text_top Обувь для вечерних прогулок
+                                                     p.desc    Кеды с цветочным узором
+                        .section_bonus
+                               .block_img
+                                    img(src="/images/bonus_img.png")
+                               .block_text
+                                        h3 Копи бонусы и оплачивай до 100% покупки
+                                        p Приятная система скидок в нашем магазине, доступная каждому
+                                        .block_img_mobile
+                                            .block_img
+                                                img(src="/images/bonus_img.png")
+                                            .crown_img_2(style="background-image:url(../images/crown_img_2.png)")
+                                        a.link(href="") Получить карту
+                               .crown_img
+                                        img(src="/images/crown_img.png")
+
+
+                        .section_advantage
+                            h2 Наши преимущества
+                            .block_advantage.container_fluid
+                                .item_advantage.col-3
+                                    img(src="/images/adva_img_1.png")
+                                    h3 Подлинные товары
+                                    p Все товары имеют гарантию и сертификаты производителя
+                                .item_advantage.col-3
+                                    img(src="/images/adva_img_2.png")
+                                    h3 Гарантированный возврат или обмен
+                                    p Если товар не подошел по цвету, размеру или фасону, вы можете вернуть
+                                .item_advantage.col-3
+                                    img(src="/images/adva_img_3.png")
+                                    h3 Доставка с примеркой по всей России
+                                    p Бесплатная доставка по ЦНО. Послный список городов смотрите на странице доставка
+                                .item_advantage.col-3
+                                    img(src="/images/adva_img_4.png")
+                                    h3 Гарантия 90 дней
+                                    p Если товар не подошел по цвету, размеру или фасону, вы можете вернуть
+                .section_forma
+                    .line_form
+                    .block_text
+                        h3 Унайте о скидках первыми
+                        p Подпишитесь на нашу рассылку и получайте письма с секретными промо-кодами, акциями и скидками. Будет интересно!
+                    .block_form
+                        form( action="action3.php" method="post" enctype="multipart/form-data" role="form" class="form_3")
+                        #serv-msg3( class="server-mes  error")
+                        input( name="message" type="text"  placeholder="Введите свой Email" qtip-position="top" qtip-content="Введите почту" class="form__input")
+                        input( type="checkbox" id="subscribeNews" name="" value="newsletter")
+                        label(class="check_sub check_sub_mobile" for="subscribeNews" )
+                            span Я даю согласие на обработку данных и принимаю условия
+                            a(href="") политики
+                            span   конфиденциальности
+
+                        input( type="submit" value="Для женщин" class="form__submit ")
+                        input( type="submit" value="Для мужчин" class="form__submit ")
+                        br
+
+                        input( type="checkbox" id="subscribeNews" name="" value="newsletter")
+                        label(class="check_sub" for="subscribeNews" )
+                            span Я даю согласие на обработку данных и принимаю условия
+                            a(href="") политики
+                            span   конфиденциальности
+
+                .block_insta
+                        h2 #cavaletto_shoes
+                        p Смотрите больше новых образов в нашем
+                            a(href="") инстаграме
+                        .block_insta_items
+                            .insta_item
+                                .block_hover
+                                img(src="/images/insta_img_1.png")
+
+                            .insta_item
+                                 .block_hover
+                                 img(src="/images/insta_img_2.png")
+                            .insta_item
+                                .block_hover
+                                img(src="/images/insta_img_3.png")
+                            .insta_item
+                                .block_hover
+                                img(src="/images/insta_img_4.png")
+                            .insta_item
+                                .block_hover
+                                img(src="/images/insta_img_5.png")
+                //FOOTER
+
+                .footer
+                    .block_footer_top.block_footer_top_all
+                        .footer_items
+                            img(src="/images/logo_footer.png")
+                        .menu_accordion
+                                .footer_items
+                                    h4 Каталог магазина
+                                    +nav('box__nav-navigation', ['Для женщин', 'Для мужчин', 'Для детей', 'Нестандартный размер',  'Сумки',  'Аксуссуары', 'Бренды'], 1)
+                                .footer_items
+                                    h4 Магазин
+                                    +nav('box__nav-navigation', ['О магазине', 'Контакты', 'Адреса магазинов', 'Оптовым покупателям', 'Бонусная карта', 'Политика конфиденциальности'], 1)
+                                .footer_items
+                                    h4 Помощь
+                                    +nav('box__nav-navigation', ['Доставка и оплата', 'Гарантии', 'Возврат', 'Как сделать заказ', 'Как выбрать размер', 'Узнать статус заказа'], 1)
+                        .footer_items.block_phone
+                            p Бесплатный звонок по РФ
+                            a.phone_link(href="tel:8 800 700-34-55 ")  8 800 700-34-55
+                            p Ежедневно с 10:00 до 19:00
+                            .social_items
+                                .social_item
+                                    a.social_link(href="")
+                                        img(src="/images/fc.png")
+                                .social_item
+                                    a.social_link(href="")
+                                        img(src="/images/vk.png")
+                                .social_item
+                                     a.social_link(href="")
+                                        img(src="/images/inst.png")
+                    .block_footer_top
+                        .block_footer_top_mobile
+                            .footer_items
+                                .social_items
+                                    .social_item
+                                        a.social_link(href="")
+                                            img(src="/images/fc.png")
+                                    .social_item
+                                        a.social_link(href="")
+                                            img(src="/images/vk.png")
+                                    .social_item
+                                        a.social_link(href="")
+                                            img(src="/images/inst.png")
+
+
+
+
+
+                            .accordion(id="accordionExample")
+                                .footer_items
+                                    h4(data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne") Каталог магазина
+                                    div(id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample")
+                                        +nav('box__nav-navigation', ['Для женщин', 'Для мужчин', 'Для детей', 'Нестандартный размер', 'Сумки', 'Аксуссуары', 'Бренды'], 1)
+                                .footer_items
+                                    h4( data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo") Магазин
+                                    div(id="collapseTwo" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample")
+                                        +nav('box__nav-navigation', ['О магазине', 'Контакты', 'Адреса магазинов', 'Оптовым покупателям', 'Бонусная карта', 'Политика конфиденциальности'], 1)
+                                .footer_items
+                                    h4(data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree") Помощь
+                                    div(id="collapseThree" class="collapse " aria-labelledby="headingThree" data-parent="#accordionExample")
+                                        +nav('box__nav-navigation', ['Доставка и оплата', 'Гарантии', 'Возврат', 'Как сделать заказ', 'Как выбрать размер', 'Узнать статус заказа'], 1)
+
+                            .footer_items
+                                img(src="/images/logo_footer.png")
+                            .footer_items.block_phone
+                                p Бесплатный звонок по РФ
+                                a.phone_link(href="tel:8 800 700-34-55 ")  8 800 700-34-55
+                                p Ежедневно с 10:00 до 19:00
+
+
+
+
+                    .footer_bottom
+                            .footer_bottom_items.item_copyright_1
+                                p © 2016 – 2018,  «Территория обуви»
+                            .footer_bottom_items.items_card
+                                .footer_bottom_item
+                                    img(src="/images/visa.png")
+                                .footer_bottom_item
+                                    img(src="/images/mcard.png")
+
+                                .footer_bottom_item
+                                    img(src="/images/maestro.png")
+
+                                .footer_bottom_item
+                                    img(src="/images/mir.png")
+                            .footer_bottom_items.item_copyright_2
+                                p © 2016 – 2018,  «Территория обуви»
+
+                            .footer_bottom_items
+                                a(href="") Разработали в «Медиасеть»
+
+
+
+        //build:js js/vendor.js
+        script(src="/js/jquery.min.js")
+        script(src="/js/slick.min.js")
+        script(src="/js/bootstrap.js")
+        script(src="/js/tab.js")
+        script(src="/js/jquery.formstyler.min.js")
+
+
+
+
+        //endbuild
+        //build:js js/main.js
+        script(src="/js/send.js")
+        script(src="/js/validation.js")
+        script(src="/js/main.js")
+        //endbuild
